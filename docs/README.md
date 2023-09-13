@@ -190,7 +190,9 @@ We currently don't have any tutorials. Please check the examples below or play w
 
 ## See Examples
 You can find a complete chatfic archive in the /examples folder of our github repo:
+https://github.com/gokhanmeteerturk/chatfic-format/tree/main/examples/example-1
 
+Or directly download the archive: [example-1.zip](https://github.com/gokhanmeteerturk/chatfic-format/raw/main/examples/example-1.zip)
 
 ## Specification
 

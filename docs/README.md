@@ -43,13 +43,13 @@ Characters are defined within the "characters" section and can have attributes. 
 **Example:**
 
 ```chatficbasic
-characters/player/name: John
-characters/alice/name: Alice
-characters/alice/color: #0000FF
-characters/bob/name: Bob
-characters/bob/avatar: bob.jpg
-characters/mike/name: Mike
-characters/jes/name: Jessica
+> characters/player/name: John
+> characters/alice/name: Alice
+> characters/alice/color: #0000FF
+> characters/bob/name: Bob
+> characters/bob/avatar: bob.jpg
+> characters/mike/name: Mike
+> characters/jes/name: Jessica
 ```
 
 ### Story Content

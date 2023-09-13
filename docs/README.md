@@ -1,5 +1,5 @@
 # Chatfic Format
-Chatfic Format with docs, examples and tools for conversion.
+
 
 ## 1. QUICK START
 You can start creating your chatfic stories in the "chatficbasic" format by simply following these steps:

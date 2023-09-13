@@ -2,6 +2,12 @@
 Chatfic Format with docs, examples and tools for conversion.
 
 ## Chatfic Archives
+Since most chatfics consist both a story and a collection of media files, chatfic format is not only about how to format your story. To make an entire chatfic story easy to distribute and easy to work with, one should create an archive file, with below structure:
+``` bash
+wip
+
+
+```
 
 ## Specification
 
@@ -28,16 +34,9 @@ The "chatficbasic" format is a simple and structured way to create interactive c
 > author: /u/yourusername
 > patreon-username: yourpatreonusername
 > episode: 1
-> characters/player/name: John
-> characters/alice/name: Alice
-> characters/alice/color: #0000FF
-> characters/bob/name: Bob
-> characters/bob/avatar: bob.jpg
-> characters/mike/name: Mike
-> characters/jes/name: Jessica
 ```
 ### Characters
-Characters are defined within the "characters" section and can have attributes like name, color, and avatar. Currently supported attributes are name, color, and avatar. Additional attributes may be included with v1.x minor updates, so parsers and renderers should expect to encounter unknown additional attributes.
+Characters are defined within the "characters" section and can have attributes. Currently supported attributes are name, color, and avatar. Additional attributes may be included with v1.x minor updates, so parsers and renderers should expect to encounter unknown additional attributes.
 
 "player" and "app" character slugs are reserved. "app" slug should never appear in the characters section of your story metadata. While "player" should definitely appear:
 
@@ -110,7 +109,7 @@ george: Nope!
 player: I watched "bar". Does that count?
 ```
 
-Chatfics are default to the "player"s point-of-view(aka POV). This means the player's messages are shown on the right side of an chatroom. If you want any other character's messages to be seen on the right side, you can use "(pov)" after the chatroom name.
+Chatfics are default to the "player"s point-of-view(aka POV). This means the player's messages are shown on the right side of the chatroom. If you want any other character's messages to be seen on the right side, you can use "(pov)" after the chatroom name.
 
 Below is an example chat between non-player characters "Alice" and "Mike". We will name this chatroom "Alice-Mike". It is not a strict convention but it's recommended to use the chatroom name "character1-character2" for non-player chats to avoid any confusion.
 
@@ -124,7 +123,7 @@ mike: nope :(
 ### Multimedia
 Multimedia elements can be embedded using the [IMAGE] and [VIDEO] tags.
 
-The file name should be specified within the parentheses. A multimedia can be sent along with a text message, if text is added **after** the multimedia element:
+The file name should be specified within the parentheses. A multimedia can be sent along with a text message, by adding text **after** the multimedia element:
 
 **Example:**
 ```chatficbasic
@@ -143,24 +142,27 @@ jessica: Ah sorry, that was an accidental call.
 player: no worries!
 ```
 ### End of Story
-If player ends up in a page with no options at the end, the story will end. It is usually a good practice to end the story with a message from the narrator:
+If the player ends up in a page with no options at the end, the story will end. It is usually a good practice to end the story with a message from the narrator:
 
 ```chatficbasic
 app: Story ended, thanks for playing.
 ```
 
 ## Tutorial
+We currently don't have any tutorials. Please check the examples below or play with [https://editor.chatficlab.com](the editor) to understand how things work.
 
 ## See Examples
 
 
 ## Tools and 3rd party projects
 
+Currently tools for editing a chatfic is limited to an online editor and several converters. If you publish a tool for anything chatfic format related, you can request to be listed here by opening a new issue.
+
 ### Online Editor
-aaa
+A proof-of-work online editor project is published on GitHub under the name [https://github.com/gokhanmeteerturk/chatficbasic-html-editor](@gokhanmeteerturk/chatficbasic-html-editor).
 
 ### Converters
-bbb
+Work in progress
 
-### Others
-ccc
+### Other Tools
+Work in progress

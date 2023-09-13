@@ -1,0 +1,172 @@
+{
+  "title": "Test Story - Look Up at the Sky",
+  "description": "This is a simple test story.",
+  "author": "/u/yourusername",
+  "patreonusername": "yourpatreonusername",
+  "modified": 1694604568727,
+  "episodes": 1,
+  "episode": 1,
+  "characters": {
+    "player": {
+      "name": "John"
+    },
+    "app": {
+      "name": "app"
+    },
+    "alice": {
+      "name": "Alice",
+      "color": "black"
+    },
+    "bob": {
+      "name": "Bob",
+      "color": "red"
+    },
+    "mike": {
+      "name": "Mike",
+      "color": "purple"
+    },
+    "jes": {
+      "name": "Jessica",
+      "color": "blue"
+    }
+  },
+  "format": "chatficbasicjson",
+  "pages": [
+    {
+      "id": 1,
+      "name": "initial",
+      "messages": [
+        {
+          "message": "Hello, I'm Alice. How are you?",
+          "from": "alice",
+          "side": "0",
+          "multimedia": null,
+          "chatroom": "Alice"
+        }
+      ],
+      "options": [
+        {
+          "to": 2,
+          "message": "Respond to Alice"
+        },
+        {
+          "to": 3,
+          "message": "Text to Bob instead"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "second",
+      "messages": [
+        {
+          "message": "Hi Alice, I'm doing well. How about you?",
+          "from": "player",
+          "side": "2",
+          "multimedia": null,
+          "chatroom": "Alice"
+        },
+        {
+          "message": "I'm good too.",
+          "from": "alice",
+          "side": "0",
+          "multimedia": null,
+          "chatroom": "Alice"
+        }
+      ],
+      "options": [
+        {
+          "to": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "third",
+      "messages": [
+        {
+          "message": "Hello Bob, are you available?",
+          "from": "player",
+          "side": "2",
+          "multimedia": null,
+          "chatroom": "Bob"
+        },
+        {
+          "message": "Bob has muted you.",
+          "from": "app",
+          "side": "1",
+          "multimedia": null,
+          "chatroom": "Bob"
+        }
+      ],
+      "options": [
+        {
+          "to": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "mylastpage",
+      "messages": [
+        {
+          "message": "Hey everyone, I've created a group chat with our classmates. Hi!",
+          "from": "mike",
+          "side": "0",
+          "multimedia": null,
+          "chatroom": "The Squad"
+        },
+        {
+          "message": "Hello, everyone!",
+          "from": "jes",
+          "side": "0",
+          "multimedia": null,
+          "chatroom": "The Squad"
+        },
+        {
+          "message": "You'll now see a conversation between 2 other people.",
+          "from": "app",
+          "side": "1",
+          "multimedia": null,
+          "chatroom": "Mike-Alice"
+        },
+        {
+          "message": "Hey Alice, I'm Mike. What are you up to?",
+          "from": "mike",
+          "side": "0",
+          "multimedia": null,
+          "chatroom": "Mike-Alice"
+        },
+        {
+          "message": "Just relaxing.",
+          "from": "alice",
+          "side": "2",
+          "multimedia": null,
+          "chatroom": "Mike-Alice"
+        },
+        {
+          "message": "",
+          "from": "alice",
+          "side": "2",
+          "multimedia": "media/media/media/alice1.jpg",
+          "chatroom": "Mike-Alice"
+        },
+        {
+          "message": "Here's a video from me then!",
+          "from": "mike",
+          "side": "0",
+          "multimedia": "media/media/media/chilling.mp4",
+          "chatroom": "Mike-Alice"
+        },
+        {
+          "message": "Story ended, thanks for playing.",
+          "from": "app",
+          "side": "1",
+          "multimedia": null,
+          "chatroom": "Mike-Alice"
+        }
+      ],
+      "options": []
+    }
+  ]
+}

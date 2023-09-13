@@ -149,7 +149,7 @@ app: Story ended, thanks for playing.
 ```
 
 ## Tutorial
-We currently don't have any tutorials. Please check the examples below or play with [https://editor.chatficlab.com](the editor) to understand how things work.
+We currently don't have any tutorials. Please check the examples below or play with [the editor](https://editor.chatficlab.com) to understand how things work.
 
 ## See Examples
 
@@ -159,7 +159,7 @@ We currently don't have any tutorials. Please check the examples below or play w
 Currently tools for editing a chatfic is limited to an online editor and several converters. If you publish a tool for anything chatfic format related, you can request to be listed here by opening a new issue.
 
 ### Online Editor
-A proof-of-work online editor project is published on GitHub under the name [https://github.com/gokhanmeteerturk/chatficbasic-html-editor](@gokhanmeteerturk/chatficbasic-html-editor).
+A proof-of-work online editor project is published on GitHub under the name [@gokhanmeteerturk/chatficbasic-html-editor](https://github.com/gokhanmeteerturk/chatficbasic-html-editor).
 
 ### Converters
 Work in progress

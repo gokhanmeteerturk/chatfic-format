@@ -14,12 +14,17 @@
    <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
    <link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
    <link rel="stylesheet" href="media/dark-theme.css">
+   <link rel="stylesheet" href="media/toc.css">
 
    <!-- Custom Styles -->
    <style>
      :root {
        /* --theme-hue: 325; */
      }
+     .sidebar-nav>ul>ul>li>a {
+          font-weight: bold !important;
+          text-decoration: underline;
+      }
    </style>
    
 </head>
@@ -31,7 +36,12 @@
      window.$docsify = {
       name: 'Chatfic Format',
       repo: 'https://github.com/gokhanmeteerturk/chatfic-format',
-      relativePath: false
+      relativePath: false,
+      toc: {
+        tocMaxLevel: 2,
+        target: 'h2, h3, h4, h5, h6',
+        ignoreHeaders:  ['<!-- {docsify-ignore} -->', '<!-- {docsify-ignore-all} -->']
+      },
      };
    </script>
 
@@ -43,6 +53,7 @@
    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
    <script src="//unpkg.com/docsify-accordify/src/index.js"></script>
+   <script src="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.js"></script>
 
   </body>
 </html>

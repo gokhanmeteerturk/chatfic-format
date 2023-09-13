@@ -1,7 +1,7 @@
 # Chatfic Format
 Chatfic Format with docs, examples and tools for conversion.
 
-## Quick Start
+## 1. QUICK START
 You can start creating your chatfic stories in the "chatficbasic" format by simply following these steps:
 
 > If you already have your chatfic in another format, you can take a look at the [Converters](#converters) section of this documentation.
@@ -18,9 +18,7 @@ You can use [The Chatfic Editor](https://editor.chatficlab.com) to create chatfi
 1. **Create a new chatfic:** Open a text editor and create a new file named **storybasic.md**.
 
     Begin your chatfic file by specifying story info at the beginning of the file. Add your #pages and user: messages after that.
-    
-    **Example:**
-
+    #### show/hide Example +
     ```chatficbasic
     > format: chatficbasic
     > version: 1
@@ -60,10 +58,8 @@ You can use [The Chatfic Editor](https://editor.chatficlab.com) to create chatfi
 3. Create a storybasic.json counterpart of your storybasic.md. You can do this by:
     - Importing your chatfic to [The Chatfic Editor](https://editor.chatficlab.com) and clicking the "Show JSON (v1)" button
     - Using a [converter](#converters)
-    - Or creating it manually (not recommended).
-
-    Here is what it should look like:
-    ### show/hide json +
+    - Or creating it manually (not recommended). Here is what it should look like:
+    #### show/hide json code +
     ```json
     {
     "format": "chatficbasicjson",
@@ -168,7 +164,7 @@ You can use [The Chatfic Editor](https://editor.chatficlab.com) to create chatfi
 4. Create a zip archive with storybasic.md, storybasic.json and your media folder. You can include a LICENSE file too.
 
 
-## Chatfic Archives
+### Chatfic Archives
 Since most chatfics consist of both a story and a collection of media files, chatfic format is not only about how to format your story. To make an entire chatfic story easy to distribute and easy to work with, one should create an archive file, with the below structure:
 
 ![tree view](media/tree.png)
@@ -185,16 +181,16 @@ The reason we have both the .md version and the .json version together is to mak
 **story.json:** This file will get generated automatically by the chatfic servers and **the author shouldn't include this file in the archive**. The difference between this and storybasic.json can be found under the section "[Publish](#publish)". But basically, storybasic is the source code, used by the editors, and story.json is the compiled and extended version of it, only used by the chatfic players like [chatficlab.com](https://chatficlab.com)
 
 
-## Tutorial
+### Tutorial
 We currently don't have any tutorials. Please check the examples below or play with [the editor](https://editor.chatficlab.com) to understand how things work.
 
-## See Examples
+## 2. SEE EXAMPLES
 You can find a complete chatfic archive in the /examples folder of our github repo:
 https://github.com/gokhanmeteerturk/chatfic-format/tree/main/examples/example-1
 
 Or directly download the archive: [example-1.zip](https://github.com/gokhanmeteerturk/chatfic-format/raw/main/examples/example-1.zip)
 
-## Specification
+## 3. SPECIFICATION
 
 The "chatficbasic" format is a simple and structured way to create interactive chat-based stories. It allows authors to write stories using a conversational format, with multiple characters, non-linear story choices and multimedia elements.
 
@@ -333,7 +329,7 @@ If the player ends up in a page with no options at the end, the story will end. 
 app: Story ended, thanks for playing.
 ```
 
-## Tools and 3rd party projects
+## 4. TOOLS AND 3RD PARTY PROJECTS
 
 Currently tools for editing a chatfic are limited to an online editor and several converters. If you publish a tool for anything chatfic format related, you can request to be listed here by opening a new issue.
 

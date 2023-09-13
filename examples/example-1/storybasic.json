@@ -148,14 +148,14 @@
           "message": "",
           "from": "alice",
           "side": "2",
-          "multimedia": "media/media/media/alice1.jpg",
+          "multimedia": "media/alice1.jpg",
           "chatroom": "Mike-Alice"
         },
         {
           "message": "Here's a video from me then!",
           "from": "mike",
           "side": "0",
-          "multimedia": "media/media/media/chilling.mp4",
+          "multimedia": "media/chilling.mp4",
           "chatroom": "Mike-Alice"
         },
         {

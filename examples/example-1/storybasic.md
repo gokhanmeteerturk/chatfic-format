@@ -42,7 +42,7 @@ jes:  Hello, everyone!
 app(Mike-Alice):  You'll now see a conversation between 2 other people.
 mike:  Hey Alice, I'm Mike. What are you up to?
 alice(pov):  Just relaxing.
-alice(pov):  ![IMAGE](media/media/media/alice1.jpg)
-mike:  ![VIDEO](media/media/media/chilling.mp4) Here's a video from me then!
+alice(pov):  ![IMAGE](media/alice1.jpg)
+mike:  ![VIDEO](media/chilling.mp4) Here's a video from me then!
 app:  Story ended, thanks for playing.
 

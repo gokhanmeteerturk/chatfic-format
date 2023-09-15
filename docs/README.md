@@ -337,7 +337,11 @@ Currently tools for editing a chatfic are limited to an online editor and severa
 A proof-of-work online editor project is published on GitHub under the name [@gokhanmeteerturk/chatficbasic-html-editor](https://github.com/gokhanmeteerturk/chatficbasic-html-editor).
 
 ### Converters
-Work in progress
+Work in progress.
+- Import
+    - chatfic md to json
+        - [python coverter](https://github.com/gokhanmeteerturk/chatfic-format/blob/main/tools/import/chatfic-markdown-to-json/convert.py)
+        - [javascript coverter](https://github.com/gokhanmeteerturk/chatfic-format/blob/main/tools/import/chatfic-markdown-to-json/convert.js)
 
 ### Other Tools
 Work in progress

@@ -29,6 +29,14 @@
       "color": "blue"
     }
   },
+  "variables": {
+    "roommate": {
+      "value": "roommate"
+    },
+    "roommateShort": {
+      "value": "roomie"
+    }
+  },
   "format": "chatficbasicjson",
   "pages": [
     {

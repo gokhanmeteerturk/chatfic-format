@@ -7,6 +7,9 @@ chatfic_to_add = {
     "pages":[],
     "characters":{
 
+    },
+    "variables":{
+
     }
 }
 def convert_to_json(input_file):
@@ -24,12 +27,21 @@ def convert_to_json(input_file):
         if not line:
             continue
         if line.startswith('> '):
+            if line.startswith('> variables/'):
+                parts = line[12:].replace(" : ","/").replace(" :","/").replace(": ","/").split("/")
+                if len(parts) >= 3:
+                    variable = parts[0].strip()
+                    attribute = parts[1].strip()
+                    value = parts[2].strip()
+                    if variable not in chatfic_to_add["variables"]:
+                        chatfic_to_add["variables"][variable] = {}
+                    chatfic_to_add["variables"][variable][attribute] = value
             if line.startswith('> characters/'):
                 parts = line[13:].replace(" : ","/").replace(" :","/").replace(": ","/").split("/")
                 if len(parts) >= 3:
-                    character = parts[0]
-                    attribute = parts[1]
-                    value = parts[2]
+                    character = parts[0].strip()
+                    attribute = parts[1].strip()
+                    value = parts[2].strip()
                     if character not in chatfic_to_add["characters"]:
                         chatfic_to_add["characters"][character] = {}
                     chatfic_to_add["characters"][character][attribute] = value
@@ -56,6 +68,7 @@ def convert_to_json(input_file):
             page_found = next((page for page in chatfic_to_add["pages"] if page["name"] == option["to"]))
             option["to"] = page_found["id"] if page_found else page["id"]
     chatfic["characters"]=chatfic_to_add["characters"]
+    chatfic["variables"]=chatfic_to_add["variables"]
     chatfic["pages"]=chatfic_to_add["pages"]
     return chatfic
 

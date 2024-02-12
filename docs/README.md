@@ -29,6 +29,8 @@ You can use [The Chatfic Editor](https://editor.chatficlab.com) to create chatfi
     > episode: 1
     > characters/player/name: John
     > characters/alice/name: Alice
+    > variables/roommate/value: roommate
+    > variables/roommateShort/value: roomie
 
     
     # initial
@@ -41,7 +43,7 @@ You can use [The Chatfic Editor](https://editor.chatficlab.com) to create chatfi
     [say eww](#badpath)
 
     # nicepath
-    player(Alice):  nice!
+    player(Alice):  nice photo $roommateShort!
 
     [next](#ending)
 
@@ -72,6 +74,10 @@ You can use [The Chatfic Editor](https://editor.chatficlab.com) to create chatfi
         "player": {"name": "John"},
         "app": {"name": "app"},
         "alice": {"name": "Alice"}
+    },
+    "variables": {
+        "roommate": {"value": "roommate"},
+        "roommateShort": {"value": "roomie"}
     },
     "pages": [
         {
@@ -232,6 +238,27 @@ Characters are defined within the "characters" section and can have attributes. 
 > characters/mike/name: Mike
 > characters/jes/name: Jessica
 ```
+
+### Variables
+To give the readers some control over the story, authors may want to make some words "changeable" or in other terms, "variable".
+Variables in Chatfic Lab are similar to the ones in programming. They are containers which hold a value.
+
+> In future versions of chatfic-format, variables may be able to dynamically change based on user choices. Such an update would also introduce hidden variables. 
+
+**Example:**
+Below is an example of how to let user choose an occupation for the player, with the default occupation being 'teacher' create a variable called $playerOccupation.
+
+1. Define variable:
+```chatficbasic
+> variables/playerOccupation/value: Teacher
+```
+2. Use variable:
+```chatficbasic
+alice: Hello! what do you do for a living?
+player: Hi Alice! I am a $playerOccupation
+```
+This last message will be shown as "Hi Alice! I am a Teacher" to the reader by default.
+If the reader changes the value of the variable $playerOccupation, messages will be rendered with the new value instead.
 
 ### Story Content
 The story is divided into pages, each identified by a unique, **one word** label. Pages contain character dialogue.

@@ -5,6 +5,7 @@ let chatficConversionResult = {
 let chatficToAdd = {
     pages: [],
     characters: {},
+    variables:{}
 };
 
 function convertChatficFromMdToJSON(chatficbasicCode) {
@@ -14,6 +15,7 @@ function convertChatficFromMdToJSON(chatficbasicCode) {
     chatficToAdd = {
         pages: [],
         characters: {},
+        variables: {}
     };
     const metadataKeys = [
         "title",
@@ -35,6 +37,23 @@ function convertChatficFromMdToJSON(chatficbasicCode) {
             continue;
         }
         if (trimmedLine.startsWith("> ")) {
+            if (trimmedLine.startsWith("> variables/")) {
+                const parts = trimmedLine
+                    .slice(12)
+                    .replace(" : ", "/")
+                    .replace(" :", "/")
+                    .replace(": ", "/")
+                    .split("/");
+                if (parts.length >= 3) {
+                    const character = parts[0].trim();
+                    const attribute = parts[1].trim();
+                    const value = parts[2].trim();
+                    if (!chatficToAdd.characters[character]) {
+                        chatficToAdd.characters[character] = {};
+                    }
+                    chatficToAdd.characters[character][attribute] = value;
+                }
+            }
             if (trimmedLine.startsWith("> characters/")) {
                 const parts = trimmedLine
                     .slice(13)
@@ -43,9 +62,9 @@ function convertChatficFromMdToJSON(chatficbasicCode) {
                     .replace(": ", "/")
                     .split("/");
                 if (parts.length >= 3) {
-                    const character = parts[0];
-                    const attribute = parts[1];
-                    const value = parts[2];
+                    const character = parts[0].trim();
+                    const attribute = parts[1].trim();
+                    const value = parts[2].trim();
                     if (!chatficToAdd.characters[character]) {
                         chatficToAdd.characters[character] = {};
                     }
@@ -90,6 +109,7 @@ function convertChatficFromMdToJSON(chatficbasicCode) {
     }
 
     chatficConversionResult.characters = chatficToAdd.characters;
+    chatficConversionResult.variables = chatficToAdd.variables;
     chatficConversionResult.pages = chatficToAdd.pages;
 
     return chatficConversionResult;

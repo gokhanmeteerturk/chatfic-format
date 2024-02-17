@@ -5,6 +5,9 @@ chatfic = {
     }
 chatfic_to_add = {
     "pages":[],
+    "handles": {
+
+    },
     "characters":{
 
     },
@@ -14,7 +17,7 @@ chatfic_to_add = {
 }
 def convert_to_json(input_file):
     metadata_keys = ["title","description","author",
-                 "patreonusername","modified","episode",]
+                 "modified","episode",]
     current_page_id = 0
     current_page_name = None
     current_lines = []
@@ -27,8 +30,14 @@ def convert_to_json(input_file):
         if not line:
             continue
         if line.startswith('> '):
+            if line.startswith('> handles/'):
+                parts = line[10:].replace(" : ",":").replace(" :",":").replace(": ",":").replace(":","/", 1).split("/")
+                if len(parts) == 2:
+                    handle_type = parts[0].strip()
+                    handle_value = parts[1].strip()
+                    chatfic_to_add["handles"][handle_type] = handle_value
             if line.startswith('> variables/'):
-                parts = line[12:].replace(" : ","/").replace(" :","/").replace(": ","/").split("/")
+                parts = line[12:].replace(" : ",":").replace(" :",":").replace(": ",":").replace(":","/", 1).split("/")
                 if len(parts) >= 3:
                     variable = parts[0].strip()
                     attribute = parts[1].strip()
@@ -37,14 +46,29 @@ def convert_to_json(input_file):
                         chatfic_to_add["variables"][variable] = {}
                     chatfic_to_add["variables"][variable][attribute] = value
             if line.startswith('> characters/'):
-                parts = line[13:].replace(" : ","/").replace(" :","/").replace(": ","/").split("/")
-                if len(parts) >= 3:
+                parts = line[13:].replace(" : ",":").replace(" :",":").replace(": ",":").replace(":","/", 1).split("/")
+                parts_count = len(parts)
+                if parts_count >= 3:
                     character = parts[0].strip()
                     attribute = parts[1].strip()
-                    value = parts[2].strip()
                     if character not in chatfic_to_add["characters"]:
                         chatfic_to_add["characters"][character] = {}
-                    chatfic_to_add["characters"][character][attribute] = value
+                    if parts_count >= 4 and attribute == "model":
+                        model_attribute = parts[2].strip()
+                        if "model" not in chatfic_to_add["characters"][character]:
+                            chatfic_to_add["characters"][character]["model"] = {}
+                        if parts_count == 4 and model_attribute != "handles":
+                            value = parts[3].strip()
+                            chatfic_to_add["characters"][character]["model"][model_attribute] = value
+                        elif parts_count == 5 and model_attribute == "handles":
+                            handle_attribute = parts[3].strip()
+                            value = parts[4].strip()
+                            if "handles" not in chatfic_to_add["characters"][character]["model"]:
+                                chatfic_to_add["characters"][character]["model"]["handles"] = {}
+                            chatfic_to_add["characters"][character]["model"]["handles"][handle_attribute] = value
+                    else:
+                        value = parts[2].strip()
+                        chatfic_to_add["characters"][character][attribute] = value
             for metadata_key in metadata_keys:
                 if line.startswith('> '+ metadata_key + ": "):
                     value = line[len('> '+ metadata_key + ": "):]
@@ -67,6 +91,7 @@ def convert_to_json(input_file):
         for option in page["options"]:
             page_found = next((page for page in chatfic_to_add["pages"] if page["name"] == option["to"]))
             option["to"] = page_found["id"] if page_found else page["id"]
+    chatfic["handles"]=chatfic_to_add["handles"]
     chatfic["characters"]=chatfic_to_add["characters"]
     chatfic["variables"]=chatfic_to_add["variables"]
     chatfic["pages"]=chatfic_to_add["pages"]

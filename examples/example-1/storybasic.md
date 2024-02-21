@@ -3,7 +3,8 @@
 > title: Test Story - Look Up at the Sky
 > description: This is a simple test story.
 > author: /u/yourusername
-> patreonusername: yourpatreonusername
+> handles/patreon: yourpatreonusername
+> handles/subscribestar: yoursubscribestarusername
 > modified: 1694604568727
 > episode: 1
 > description: This is a simple test story.
@@ -17,6 +18,11 @@
 > characters/mike/color : purple
 > characters/jes/name : Jessica
 > characters/jes/color : blue
+> characters/jes/model/name: Iggy Azalea
+> characters/jes/model/handles/instagram: thenewclassic
+> characters/jes/model/handles/onlyfans: iggyazalea
+> variables/roommate/value: roommate
+> variables/roommateShort/value: roomie
 
 # initial
 alice:  Hello, I'm Alice. How are you?
@@ -40,8 +46,8 @@ app:  Bob has muted you.
 mike(The Squad):  Hey everyone, I've created a group chat with our classmates. Hi!
 jes:  Hello, everyone!
 app(Mike-Alice):  You'll now see a conversation between 2 other people.
-mike:  Hey Alice, I'm Mike. What are you up to?
-alice(pov):  Just relaxing.
+mike:  Hey Alice, I'm Mike, your new $roommate. What are you up to?
+alice(pov):  Just relaxing $roommateShort.
 alice(pov):  ![IMAGE](media/alice1.jpg)
 mike:  ![VIDEO](media/chilling.mp4) Here's a video from me then!
 app:  Story ended, thanks for playing.

@@ -25,10 +25,11 @@ You can use [The Chatfic Editor](https://editor.chatficlab.com) to create chatfi
     > title: Your Story Title
     > description: A brief description of your story.
     > author: /u/yourusername
-    > patreon-username: yourpatreonusername
     > episode: 1
     > characters/player/name: John
     > characters/alice/name: Alice
+    > variables/roommate/value: roommate
+    > variables/roommateShort/value: roomie
 
     
     # initial
@@ -41,7 +42,7 @@ You can use [The Chatfic Editor](https://editor.chatficlab.com) to create chatfi
     [say eww](#badpath)
 
     # nicepath
-    player(Alice):  nice!
+    player(Alice):  nice photo $roommateShort!
 
     [next](#ending)
 
@@ -66,12 +67,15 @@ You can use [The Chatfic Editor](https://editor.chatficlab.com) to create chatfi
     "title": "Your Story Title",
     "description": "A brief description of your story.",
     "author": "/u/yourusername",
-    "patreonusername": "yourpatreonusername",
     "episode": 1,
     "characters": {
         "player": {"name": "John"},
         "app": {"name": "app"},
         "alice": {"name": "Alice"}
+    },
+    "variables": {
+        "roommate": {"value": "roommate"},
+        "roommateShort": {"value": "roomie"}
     },
     "pages": [
         {
@@ -204,7 +208,6 @@ The "chatficbasic" format is a simple and structured way to create interactive c
 - **Title:** [Your Story Title]
 - **Description:** [A brief description of your story, one line.]
 - **Author:** [Your username. ex: /u/me420 or @me420]
-- **Patreon Username**: [Your Patreon username, without the domain.]
 
 #### Metadata Example
 ```chatficbasic
@@ -213,9 +216,36 @@ The "chatficbasic" format is a simple and structured way to create interactive c
 > title: Test Story - Look Up at the Sky
 > description: This is a simple test story.
 > author: /u/yourusername
-> patreon-username: yourpatreonusername
 > episode: 1
 ```
+
+> **Note about use of blank spaces:**  
+> The metadata keys(part before colon) should never include any uppercase letters or blank spaces.  
+> Values (part after colon) can be any valid text.  
+>   
+> Valid:   "storyauthor: Bob Marley"  
+> Invalid:  "story author: Bob Marley"
+>   
+> Valid: handles/subscribestar: helloworld  
+> Invalid: handles/subscribe star: helloworld
+
+
+### Handles
+Author social media and platform handles are defined in the "handles" section. Each handle should be unique. Handles are always case sensitive. Handle names are recommended to be in lowercase.
+
+```chatficbasic
+> handles/patreon: yourpatreonusername
+> handles/subscribestar: yoursubscribestarusername
+```
+Even though you can use any valid text for handle name and value (such as handles/mywebsite or handles/tiktok), most chatfic viewers will only recognize well-known crowdfunding platforms such as patreon, subscribestar and ko-fi.
+
+> **Note on Privacy:**  
+> Handles, similar to all other chatfic metadata, should be treated as public information.  
+> When publishing a chatfic, authors should never include the handles or any personal information they do not want others to know.
+
+Handles section of a chatfic's metadata is reserved for author's handles only.  
+To see how to include model handles, see [Model Information](#model-information) under Characters.
+
 ### Characters
 Characters are defined within the "characters" section and can have attributes. Currently supported attributes are name, color, and avatar. Additional attributes may be included with v1.x minor updates, so parsers and renderers should expect to encounter unknown additional attributes.
 
@@ -232,6 +262,44 @@ Characters are defined within the "characters" section and can have attributes. 
 > characters/mike/name: Mike
 > characters/jes/name: Jessica
 ```
+
+#### Model Information
+
+Authors can include model information in the metadata section of a chatfic. This is a great way to provide proper attribution to any models whose multimedia is used in the story.
+
+```chatficbasic
+> characters/jes/name: Jessica
+> characters/jes/model/name: Iggy Azalea
+> characters/jes/model/handles/instagram: thenewclassic
+> characters/jes/model/handles/onlyfans: iggyazalea
+```
+
+As responsible usage of a model's name and multimedia requires their permission, authors should also ask for each model's permission to include handles in their story.  
+  
+As can be seen above, model information consists of a name, and handles. It is not recommended to include handles without including the model name, as this may cause visual issues in chatfic viewers and editors.
+
+
+
+### Variables
+To give the readers some control over the story, authors may want to make some words "changeable" or in other terms, "variable".
+Variables in Chatfic Lab are similar to the ones in programming. They are containers which hold a value.
+
+> In future versions of chatfic-format, variables may be able to dynamically change based on user choices. Such an update would also introduce hidden variables. 
+
+**Example:**
+Below is an example of how to let user choose an occupation for the player, with the default occupation being 'teacher' create a variable called $playerOccupation.
+
+1. Define variable:
+```chatficbasic
+> variables/playerOccupation/value: Teacher
+```
+2. Use variable:
+```chatficbasic
+alice: Hello! what do you do for a living?
+player: Hi Alice! I am a $playerOccupation
+```
+This last message will be shown as "Hi Alice! I am a Teacher" to the reader by default.
+If the reader changes the value of the variable $playerOccupation, messages will be rendered with the new value instead.
 
 ### Story Content
 The story is divided into pages, each identified by a unique, **one word** label. Pages contain character dialogue.

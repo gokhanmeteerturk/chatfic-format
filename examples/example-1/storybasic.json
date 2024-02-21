@@ -2,9 +2,11 @@
   "title": "Test Story - Look Up at the Sky",
   "description": "This is a simple test story.",
   "author": "/u/yourusername",
-  "patreonusername": "yourpatreonusername",
+  "handles": {
+    "patreon": "yourpatreonusername",
+    "subscribestar": "yoursubscribestarusername"
+  },
   "modified": 1694604568727,
-  "episodes": 1,
   "episode": 1,
   "characters": {
     "player": {
@@ -27,7 +29,22 @@
     },
     "jes": {
       "name": "Jessica",
-      "color": "blue"
+      "color": "blue",
+      "model": {
+        "name": "Iggy Azalea",
+        "handles": {
+          "instagram": "thenewclassic",
+          "onlyfans": "iggyazalea"
+        }
+      }
+    }
+  },
+  "variables": {
+    "roommate": {
+      "value": "roommate"
+    },
+    "roommateShort": {
+      "value": "roomie"
     }
   },
   "format": "chatficbasicjson",

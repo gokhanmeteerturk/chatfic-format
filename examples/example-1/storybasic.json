@@ -1,4 +1,6 @@
 {
+  "format": "chatficbasicjson",
+  "version": "1.1",
   "title": "Test Story - Look Up at the Sky",
   "description": "This is a simple test story.",
   "author": "/u/yourusername",
@@ -39,6 +41,9 @@
       }
     }
   },
+  "apps": {
+    "chat": {"name": "Messages"}
+  },
   "variables": {
     "roommate": {
       "value": "roommate"
@@ -47,7 +52,6 @@
       "value": "roomie"
     }
   },
-  "format": "chatficbasicjson",
   "pages": [
     {
       "id": 1,

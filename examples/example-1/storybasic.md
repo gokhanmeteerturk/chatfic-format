@@ -1,5 +1,5 @@
 > format: chatficbasic
-> version: 1
+> version: 1.1
 > title: Test Story - Look Up at the Sky
 > description: This is a simple test story.
 > author: /u/yourusername
@@ -23,6 +23,7 @@
 > characters/jes/model/handles/onlyfans: iggyazalea
 > variables/roommate/value: roommate
 > variables/roommateShort/value: roomie
+> apps/chat/name: Messages
 
 # initial
 alice:  Hello, I'm Alice. How are you?
